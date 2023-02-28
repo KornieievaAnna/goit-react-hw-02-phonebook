@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { ImputForm, Label } from './Form.styled';
 
 class Form extends Component {
   state = {
@@ -31,8 +32,8 @@ class Form extends Component {
   
   render() {
     return (
-      <form onSubmit={this.handleSubmit}  className ="">
-        <label>
+      <ImputForm onSubmit={this.handleSubmit}  >
+        <Label>
           Name
           <input
             type="text"
@@ -43,8 +44,8 @@ class Form extends Component {
             onChange={this.handleChange}
             required
           />
-        </label>
-        <label>
+        </Label>
+        <Label>
           Number
           <input
             type="tel"
@@ -55,9 +56,9 @@ class Form extends Component {
             onChange={this.handleChange}
             required
           />
-        </label>
+        </Label>
         <button type="submit">Add contact</button>
-      </form>
+      </ImputForm>
     );
   }
 }

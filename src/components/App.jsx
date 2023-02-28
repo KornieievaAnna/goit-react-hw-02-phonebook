@@ -3,6 +3,7 @@ import { nanoid } from 'nanoid';
 import Form from './Form/Form';
 import ContactList from './ContactList/ContactList';
 import Filter from './Form/Filter/Filter';
+import { Conteiner, Title } from './App.styled';
 
 class App extends Component {
   state = {
@@ -47,23 +48,13 @@ class App extends Component {
 
   render() {
     return (
-      <div
-        style={{
-          // height: '100vh',
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'center',
-          alignItems: 'center',
-          fontSize: 20,
-          color: '#010101',
-        }}
-      >
-        <h2>Phonebook</h2>
+      <Conteiner>
+        <Title>Phonebook</Title>
         <Form onSubmit={this.addContact} />
-        <h2>Contact</h2>
+        <Title>Contact</Title>
         <Filter value={this.state.filter} onChange={this.findContact} />
         <ContactList contacts={this.filter()} deleteContact={this.deleteToDo} />
-      </div>
+      </Conteiner>
     );
   }
 }

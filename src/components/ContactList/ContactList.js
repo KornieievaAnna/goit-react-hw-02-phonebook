@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import {Contacts, ButtonDelete } from './ContactList.styled';
 
 export default function ContactList({ contacts, deleteContact }) {
   // console.log(contacts);
@@ -6,10 +7,10 @@ export default function ContactList({ contacts, deleteContact }) {
   return (
     <ul>
       {contacts.map(contact => (
-        <li key={contact.id}>
+        <Contacts key={contact.id}>
           {contact.name}: {contact.number}
-          <button onClick={() => deleteContact(contact.id)}> Delete</button>
-        </li>
+          <ButtonDelete onClick={() => deleteContact(contact.id)}> Delete</ButtonDelete>
+        </Contacts>
       ))}
     </ul>
   );

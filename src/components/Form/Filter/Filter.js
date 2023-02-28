@@ -1,19 +1,22 @@
 import PropTypes from 'prop-types';
 
+import { ImputForm, Label } from '../Form.styled';
 
 const Filter = ({ value, onChange }) => (
-  <label>
-    Find contacts by name
-    <input
-      type="text"
-      name="name"
-      pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
-      title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
-      value={value}
-      onChange={onChange}
-      required
-    />
-  </label>
+  <ImputForm>
+    <Label>
+      Find contacts by name
+      <input
+        type="text"
+        name="name"
+        pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
+        title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
+        value={value}
+        onChange={onChange}
+        required
+      />
+    </Label>
+  </ImputForm>
 );
 
 Filter.propTypes = {
